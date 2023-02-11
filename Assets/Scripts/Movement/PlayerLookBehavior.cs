@@ -27,5 +27,14 @@ public class PlayerLookBehavior : MonoBehaviour
 
         transform.localRotation = Quaternion.Euler(_xRotation, 0f, 0f);
         PlayerBody.Rotate(Vector3.up * mouseX);
+
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+
+        RaycastHit hit;
+        if(Physics.Raycast(ray, out hit))
+        {
+
+        }
     }
 }
