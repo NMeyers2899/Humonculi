@@ -16,7 +16,7 @@ public class Item : ScriptableObject
     public string ItemName;
 
     /// <summary>
-    /// The icon that will appear in the item's in the inventory.
+    /// The icon that will appear for the items in the inventory.
     /// </summary>
-    public Sprite Icon;
+    public Texture2D Icon;
 }
