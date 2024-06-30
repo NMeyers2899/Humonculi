@@ -24,7 +24,11 @@ public class InventoryMenuBehavior : MonoBehaviour
             {
                 _itemButtons[i].GetComponentInChildren<Text>().text = _playerInventory.Inventory[i].ItemName;
 
-                //_itemButtons[i].GetComponentInChildren<Sprite>();
+                _itemButtons[i].GetComponentInChildren<Image>().sprite = _playerInventory.Inventory[i].Icon;
+            }
+            else
+            {
+                _itemButtons[i].GetComponentInChildren<Text>().text = "";
             }
         } 
     }
