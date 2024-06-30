@@ -19,4 +19,6 @@ public class Item : ScriptableObject
     /// The icon that will appear for the items in the inventory.
     /// </summary>
     public Texture2D Icon;
+
+
 }
