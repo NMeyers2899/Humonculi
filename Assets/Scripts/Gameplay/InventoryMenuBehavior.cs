@@ -1,0 +1,31 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class InventoryMenuBehavior : MonoBehaviour
+{
+    [Tooltip("Reference to the player's inventory.")]
+    [SerializeField]
+    private PlayerInventoryBehavior _playerInventory;
+
+    [Tooltip("The buttons that will reference the items in the player's inventory.")]
+    [SerializeField]
+    private Button[] _itemButtons = new Button[20];
+
+    private void OnEnable()
+    {
+        Text text;
+        Sprite icon;
+
+        for (int i = 0; i < _playerInventory.Inventory.Length; i++)
+        {
+            if(_playerInventory.Inventory[i])
+            {
+                _itemButtons[i].GetComponentInChildren<Text>().text = _playerInventory.Inventory[i].ItemName;
+
+                //_itemButtons[i].GetComponentInChildren<Sprite>();
+            }
+        } 
+    }
+}

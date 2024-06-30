@@ -7,7 +7,7 @@ public class PlayerInventoryBehavior : MonoBehaviour
 {
     [Tooltip("The inventory for the player.")]
     [SerializeField]
-    private Item[] _inventory = new Item[0];
+    private Item[] _inventory = new Item[20];
 
     public Item[] Inventory { get { return _inventory; } }
 
@@ -22,8 +22,9 @@ public class PlayerInventoryBehavior : MonoBehaviour
     {
         if(Input.GetKey(KeyCode.E))
         {
-            for(int i = 0; i < Inventory.Length; i++) 
-                print(_inventory[i].ItemName); 
+            for(int i = 0; i < Inventory.Length; i++)
+                if (_inventory[i])
+                    print(_inventory[i].ItemName); 
         }
 
         // Check to see what the player is directly looking at
