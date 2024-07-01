@@ -15,9 +15,6 @@ public class InventoryMenuBehavior : MonoBehaviour
 
     private void OnEnable()
     {
-        Text text;
-        Sprite icon;
-
         for (int i = 0; i < _playerInventory.Inventory.Length; i++)
         {
             if(_playerInventory.Inventory[i])
