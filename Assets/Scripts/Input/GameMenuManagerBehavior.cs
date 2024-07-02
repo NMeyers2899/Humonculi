@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class GameMenuManagerBehavior : MonoBehaviour
 {
-    /// <summary>
-    /// The inventory menu for the player.
-    /// </summary>
+    [Tooltip("The inventory menu for the player.")]
     public GameObject InventoryMenu;
 
     private void Update()
     {
+        // If the player presses down I...
         if (Input.GetKeyDown(KeyCode.I))
         {
+            // ...open the inventory menu.
             InventoryMenu.SetActive(true);
             Time.timeScale = 0;
             Cursor.lockState = CursorLockMode.Confined;

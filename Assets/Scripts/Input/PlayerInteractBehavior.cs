@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditorInternal.Profiling.Memory.Experimental;
 using UnityEngine;
 
-public class PlayerInventoryBehavior : MonoBehaviour
+public class PlayerInteractBehavior : MonoBehaviour
 {
     [Tooltip("The inventory for the player.")]
     [SerializeField]
@@ -13,7 +13,7 @@ public class PlayerInventoryBehavior : MonoBehaviour
 
     [SerializeField]
     [Tooltip("How far away an object can be picked up from by the player.")]
-    private float _pickUpRange = 10;
+    private float _interactRange = 10.0f;
 
     [Tooltip("The object that will be hit with a ray.")]
     private RaycastHit _hit;
@@ -24,7 +24,7 @@ public class PlayerInventoryBehavior : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(transform.forward);
         
         // Check to see if what the player hits is within range and if it is an item.
-        if(Physics.Raycast(ray, out _hit) && Vector3.Distance(transform.position, _hit.transform.position) <= _pickUpRange && _hit.transform.GetComponent<ItemPickupBehavior>())
+        if(Physics.Raycast(ray, out _hit) && Vector3.Distance(transform.position, _hit.transform.position) <= _interactRange && _hit.transform.GetComponent<ItemPickupBehavior>())
         {
             // Check to see if the item is an item.
             ItemPickupBehavior newItem = _hit.transform.GetComponent<ItemPickupBehavior>();

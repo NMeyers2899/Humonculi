@@ -7,7 +7,7 @@ public class InventoryMenuBehavior : MonoBehaviour
 {
     [Tooltip("Reference to the player's inventory.")]
     [SerializeField]
-    private PlayerInventoryBehavior _playerInventory;
+    private PlayerInteractBehavior _playerInventory;
 
     [Tooltip("The buttons that will reference the items in the player's inventory.")]
     [SerializeField]
