@@ -20,18 +20,13 @@ public class PlayerInventoryBehavior : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKey(KeyCode.E))
-        {
-            for(int i = 0; i < Inventory.Length; i++)
-                if (_inventory[i])
-                    print(_inventory[i].ItemName); 
-        }
-
         // Check to see what the player is directly looking at
         Ray ray = Camera.main.ScreenPointToRay(transform.forward);
         
-        if(Physics.Raycast(ray, out _hit) && Vector3.Distance(transform.position, _hit.transform.position) <= _pickUpRange)
+        // Check to see if what the player hits is within range and if it is an item.
+        if(Physics.Raycast(ray, out _hit) && Vector3.Distance(transform.position, _hit.transform.position) <= _pickUpRange && _hit.transform.GetComponent<ItemPickupBehavior>())
         {
+            // Check to see if the item is an item.
             ItemPickupBehavior newItem = _hit.transform.GetComponent<ItemPickupBehavior>();
             
             // If the player left clicks...
