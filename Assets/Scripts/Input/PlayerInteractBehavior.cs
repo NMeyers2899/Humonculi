@@ -5,11 +5,7 @@ using UnityEngine;
 
 public class PlayerInteractBehavior : MonoBehaviour
 {
-    [Tooltip("The inventory for the player.")]
-    [SerializeField]
-    private Item[] _inventory = new Item[20];
-
-    public Item[] Inventory { get { return _inventory; } }
+    private PlayerInventoryBehavior _playerInventory;
 
     [SerializeField]
     [Tooltip("How far away an object can be picked up from by the player.")]
@@ -32,7 +28,7 @@ public class PlayerInteractBehavior : MonoBehaviour
             // If the player left clicks...
             if (Input.GetMouseButtonDown(0) && newItem)
             {
-                _inventory[_inventory.Length] = newItem.ItemData;
+                _playerInventory.Inventory[_playerInventory.Inventory.Length] = newItem.ItemData;
                 newItem.PickedUp();
             }
                 

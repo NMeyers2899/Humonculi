@@ -7,6 +7,9 @@ public class GameMenuManagerBehavior : MonoBehaviour
     [Tooltip("The inventory menu for the player.")]
     public GameObject InventoryMenu;
 
+    [Tooltip("The item the player currently has selected.")]
+    private static Item _currentItem;
+
     private void Update()
     {
         // If the player presses down I...
@@ -28,4 +31,6 @@ public class GameMenuManagerBehavior : MonoBehaviour
         Time.timeScale = 1;
         Cursor.lockState = CursorLockMode.Locked;
     }
+
+    public void
 }

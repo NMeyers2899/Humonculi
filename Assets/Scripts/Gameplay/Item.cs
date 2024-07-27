@@ -16,5 +16,8 @@ public class Item : ScriptableObject
     [Tooltip("The icon that will appear for the items in the inventory.")]
     public Sprite Icon;
 
+    [Tooltip("The description of the item the player will recieve when hovering their mouse over it in their inventory.")]
+    public string Description;
+
 
 }
