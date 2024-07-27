@@ -15,3 +15,4 @@ MonoBehaviour:
   ID: 2
   ItemName: Hatchet
   Icon: {fileID: 21300000, guid: 379e6d81872a8ba40b38c90c9ff3b317, type: 3}
+  Description: A hatchet with dirt speckled along the blade.
